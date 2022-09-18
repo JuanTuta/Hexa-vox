@@ -8,8 +8,8 @@ public class HexGridLayout : MonoBehaviour
     public Vector2Int gridSize;
 
     [Header ("Tile Settings")]
-    public float outerSize = 1f ;
-    public float innerSize = 0f ;
+    public float outerSize = 2f ;
+    public float innerSize = 1f ;
     public float height = 1f ;
     public bool isFlatTopped;
     public Material material;
@@ -39,7 +39,7 @@ public class HexGridLayout : MonoBehaviour
                 hexRenderer.innerSize = innerSize;
                 hexRenderer.height = height;
                 hexRenderer.material = material ;
-                hexRenderer.DrawMesh() ;
+                hexRenderer.DrawMesh();
 
                 tile.transform.SetParent(transform, false) ;
             }
