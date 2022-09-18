@@ -18,7 +18,6 @@ public struct Face
 
 [RequireComponent(typeof(MeshFilter))]
 [RequireComponent(typeof(MeshRenderer))]
-
 public class HexRenderer : MonoBehaviour
 {
     private Mesh m_mesh;
@@ -43,7 +42,7 @@ public class HexRenderer : MonoBehaviour
         DrawMesh();
     }
     public void OnValidate(){
-        if (Application.isPlaying)
+        if (Application.isPlaying && m_mesh != null)
         {
             DrawMesh();
         }
