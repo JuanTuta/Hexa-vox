@@ -43,7 +43,7 @@ public class HexRenderer : MonoBehaviour
         DrawMesh();
     }
     public void OnValidate(){
-        if (Application.isPlaying)
+        if (Application.isPlaying && m_mesh != null)
         {
             DrawMesh();
         }
@@ -76,9 +76,9 @@ public class HexRenderer : MonoBehaviour
         }
     }
     private void CombineFaces ( ){
-        List < Vector3 > vertices = new List < Vector3 > ( ) ;
-        List < int > tris = new List <int> ();
-        List < Vector2 > uvs = new List < Vector2 > ( ) ;
+        List <Vector3> vertices = new List <Vector3>();
+        List <int> tris = new List <int> ();
+        List <Vector2> uvs = new List <Vector2>();
         for ( int i = 0 ; i < m_faces.Count ; i ++ )
         {
             // Add the vertices
@@ -91,10 +91,10 @@ public class HexRenderer : MonoBehaviour
                 tris.Add ( triangle + offset ) ;
             }
         }
-            m_mesh.vertices = vertices.ToArray ( ) ;
-            m_mesh.triangles = tris.ToArray ( ) ;
-            m_mesh.uv = uvs . ToArray ( ) ;
-            m_mesh.RecalculateNormals ( ) ;
+            m_mesh.vertices = vertices.ToArray();
+            m_mesh.triangles = tris.ToArray();
+            m_mesh.uv = uvs.ToArray();
+            m_mesh.RecalculateNormals();
     }
     private Face CreateFace ( float innerRad , float outerRad , float heightA , float heightB , int point , bool reverse = false )
     {
