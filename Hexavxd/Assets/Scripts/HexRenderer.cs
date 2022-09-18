@@ -18,7 +18,6 @@ public struct Face
 
 [RequireComponent(typeof(MeshFilter))]
 [RequireComponent(typeof(MeshRenderer))]
-
 public class HexRenderer : MonoBehaviour
 {
     private Mesh m_mesh;
