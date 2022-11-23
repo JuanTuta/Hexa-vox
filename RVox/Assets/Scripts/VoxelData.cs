@@ -4,9 +4,9 @@ using UnityEngine;
 
 public static class VoxelData {
 
-	public static readonly float ChunkWidth = 23.0f;
-	public static readonly float ChunkWidth1 =15.0f;
-	public static readonly float ChunkWidthh = 12.25f;
+	public static readonly float ChunkWidth = 0.0f;
+	public static readonly float ChunkWidth1 =0.0f;
+	public static readonly float ChunkWidthh = 0.0f;
 	public static readonly int ChunkHeight = 1;
 
 
@@ -72,11 +72,14 @@ public static class VoxelData {
 
 public class ChunkCoord {
 
-    public int y;
+    public float y;
+	public float x;
 
-    public ChunkCoord (int _y) {
+    public ChunkCoord (float _y,float _x) {
 
+		x=_x;
         y = _y;
+
 
     }
 }

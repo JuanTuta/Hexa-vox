@@ -23,7 +23,7 @@ public class Chunk {
 
         coord = _coord;
         chunkObject = new GameObject();
-        chunkObject.transform.position = new Vector3(0f, coord.y, 0f);
+        chunkObject.transform.position = new Vector3(coord.y, 0.0f, coord.x);
 
         meshRenderer = chunkObject.AddComponent<MeshRenderer>();
         meshFilter = chunkObject.AddComponent<MeshFilter>();
