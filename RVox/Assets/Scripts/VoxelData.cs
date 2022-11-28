@@ -4,6 +4,8 @@ using UnityEngine;
 
 public static class VoxelData {
 
+	//Cada uno de los datos representa la cantidad de chunks o de grupo de voxeles 
+	//En el entorno
 	public static readonly float ChunkWidth = 0.0f;
 	public static readonly float ChunkWidth1 =0.0f;
 	public static readonly float ChunkWidthh = 0.0f;
@@ -11,6 +13,8 @@ public static class VoxelData {
 
 
 	public static readonly Vector3[] voxelVerts = new Vector3[12] {
+		
+		//Construccion de cada cara de un voxel
 
 		//top
 		new Vector3(0.0f, 1.0f, 0.25f),
@@ -47,6 +51,8 @@ public static class VoxelData {
         {2,9,3,3,9,8,3,8,4,4,8,7},
         {4,7,5,5,7,6,5,6,0,0,6,11},*/
 
+		//asignacion de cada Quad siguiendo un sistema de coordenadas
+
 		{10,6,11,10,7,6,10,9,7,9,8,7},//top
 		{1,5,0,1,4,5,1,2,4,2,3,4},//base
 		{0,7,1,1,7,8, 1,8,2,2,8,9},
@@ -72,6 +78,7 @@ public static class VoxelData {
 
 public class ChunkCoord {
 
+	//coordenadas del voxel
     public float y;
 	public float x;
 

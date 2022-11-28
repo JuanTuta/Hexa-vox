@@ -2,13 +2,17 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+//En este apartado se crea el mundo es decir cada uno de los pixeles a tener en 
+//cuenta segun la imagen
 public class World : MonoBehaviour
 {
+
     public Material material;
     public static int aumentos=0;
 
     private void Start() {
 
+        //este for trabaja con las dimenciones de la imagen generando cada capa de voxeles
         for (float i = 0; i < 15; i++)
         {
             for (float o = 0; o < 23.0f; o=o+1.5f)
@@ -23,6 +27,8 @@ public class World : MonoBehaviour
                 Chunk newChunk1= new Chunk( new ChunkCoord(i,o),this);
             }  
         }
+
+        //Distintas pruebas necesarias 
         /*
         Chunk newChunk= new Chunk( new ChunkCoord(0f,0f),this);
         Chunk newChunk1= new Chunk( new ChunkCoord(1f,0f),this);
@@ -37,6 +43,7 @@ public class World : MonoBehaviour
         */
     }
 
+    //una bandera necesaria pa comprobar el funcionamiento
     public void aumento(){
 		aumentos++;
         //Debug.Log(aumentos);

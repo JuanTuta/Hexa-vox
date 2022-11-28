@@ -5,6 +5,7 @@ using UnityEngine;
 
 public class Chunk {
 
+	//Declaracion de variables
 	public ChunkCoord coord;
 
 	public MeshRenderer meshRenderer;
@@ -13,6 +14,7 @@ public class Chunk {
 	
 
 	int vertexIndex = 0;
+	//Listas con las distintas informacion de voxeles
 	List<Vector3> vertices = new List<Vector3> ();
 	List<int> triangles = new List<int> ();
 	List<Vector2> uvs = new List<Vector2> ();
@@ -20,6 +22,8 @@ public class Chunk {
 	World world;
 
 	public Chunk (ChunkCoord _coord, World _world) {
+
+		//Crea los chunks necesarios pa cada conjunto de voxels recibiendo coordenadas y demas
 
         coord = _coord;
         chunkObject = new GameObject();
@@ -32,6 +36,7 @@ public class Chunk {
         chunkObject.transform.SetParent(world.transform);
         meshRenderer.material = world.material;
 
+		//Esto se hace por medio de Childs
         chunkObject.name = coord.y+"_";
 
         CreateMeshData();
@@ -40,6 +45,7 @@ public class Chunk {
     }
 
 
+	//Distintas priebas para la construccion de algunas figuras
 	/*void Start () {
 
 		
@@ -86,6 +92,7 @@ public class Chunk {
 		//------//
 		*/
 
+		//Figuras de prueba 
 		/*for (int p = 0; p < 5; p++) { 
 			for (int i = 0; i < 12; i++) {
 
@@ -118,6 +125,8 @@ public class Chunk {
 	
 	public void CreateMeshData () {
 
+		//Recibe coordenadas y cantidad de voxeles
+
 		for (int l = 0; l < VoxelData.ChunkHeight ; l++)
 		{
 			for (float p = 0.0f; p <= VoxelData.ChunkWidth; p=p+1.5f)
@@ -143,6 +152,8 @@ public class Chunk {
 	}
 	void AddVoxelDataToChunk (Vector3 pos) {
 
+		//Añade el voxel al chunk
+
 		for (int p = 0; p < 5; p++)
         {
             for (int i = 0; i < 12; i++) {
@@ -163,6 +174,8 @@ public class Chunk {
 
 	void CreateMesh () {
 
+
+		//Crea las respectiva maya de voxeles prisma hexagonales y asignaciones
 		Mesh mesh = new Mesh ();
 		mesh.vertices = vertices.ToArray ();
 		mesh.triangles = triangles.ToArray ();
